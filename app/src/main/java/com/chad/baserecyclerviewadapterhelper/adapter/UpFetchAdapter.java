@@ -3,6 +3,7 @@ package com.chad.baserecyclerviewadapterhelper.adapter;
 import com.chad.baserecyclerviewadapterhelper.R;
 import com.chad.baserecyclerviewadapterhelper.entity.Movie;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.module.BaseUpFetchModule;
 import com.chad.library.adapter.base.module.UpFetchModule;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
@@ -36,4 +37,12 @@ public class UpFetchAdapter extends BaseQuickAdapter<Movie, BaseViewHolder> impl
                 break;
         }
     }
+
+
+    @NotNull
+    @Override
+    public BaseUpFetchModule addUpFetchModule(@NotNull BaseQuickAdapter<?, ?> baseQuickAdapter) {
+        return new BaseUpFetchModule(baseQuickAdapter);
+    }
+
 }
